@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
