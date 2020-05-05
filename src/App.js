@@ -6,17 +6,17 @@ import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 export default class App extends Component {
   state={
-    items:[{id:1,title:'wakeup'}, {id:2,title:'make breakfast'}],
+    items:[],
     id:uuidv4(),
     item:'',
     editItem:false
   };
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       item: e.target.value
     });
   };
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     const newItem = {
       id:this.state.id,
@@ -29,18 +29,17 @@ export default class App extends Component {
       item:'',
       id:uuidv4(),
       editItem:false
-    },() => console.log(this.state)
-    );
+    });
   };
-  clearList = (e) => {
-    console.log('clear list method')
-  }
-  handleDelete = (id) => {
-    console.log(`handle delete ${id}`)
-  }
-  handleEdit = (id) => {
-    console.log(`handle edit ${id}`)
-  }
+  clearList = () => {
+    console.log('clear list method');
+  };
+  handleDelete = id => {
+    console.log(`handle delete ${id}`);
+  };
+  handleEdit = id => {
+    console.log(`edit edit ${id}`);
+  };
   render() {
     
     return (
@@ -57,8 +56,8 @@ export default class App extends Component {
             <TodoList 
               items={this.state.items} 
               clearList={this.clearList}
-              handleDelete={this.state.handleDelete}
-              handleEdit={this.state.handleEdit} 
+              handleDelete={this.handleDelete}
+              handleEdit={this.handleEdit} 
               />
           </div>
         </div>
